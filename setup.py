@@ -1,18 +1,27 @@
-from setuptools import setup, find_packages
+from setuptools import setup
+
+VERSION = __import__("logicaldelete").__version__
+
  
 setup(
-    name='logicaldelete',
-    version = '1.0',
-    author='Patrick Altman',
-    author_email='paltman@gmail.com',
-    url='http://github.com/paltman/django-logicaldelete',
-    description="""django-logicaldelete is a base model that provides some extras for your models.""",
-    packages=find_packages(),
-    namespace_packages = [],
-    include_package_data = True,
-    zip_safe=False,
-    license='MIT',
-    install_requires=[
-        'django',
-        ]
+    name = "logicaldelete",
+    version = VERSION,
+    author = "Patrick Altman",
+    author_email = "paltman@gmail.com",
+    url = "http://github.com/paltman/django-logicaldelete",
+    description = "a base model that provides built in logical delete functionality",
+    long_description = open("README.rst").read(),
+    packages = [
+        "logicaldelete"
+    ],
+    license="BSD",
+    classifiers = [
+        "Development Status :: 4 - Beta",
+        "Environment :: Web Environment",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: BSD License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Framework :: Django",
+    ]
 )
