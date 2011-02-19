@@ -4,7 +4,7 @@ VERSION = __import__("logicaldelete").__version__
 
  
 setup(
-    name = "logicaldelete",
+    name = "django-logicaldelete",
     version = VERSION,
     author = "Patrick Altman",
     author_email = "paltman@gmail.com",
