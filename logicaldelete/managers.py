@@ -1,5 +1,7 @@
 from django.db import models
 
+from logicaldelete.query import LogicalDeleteQuerySet
+
 
 class LogicalDeletedManager(models.Manager):
     """
@@ -10,7 +12,7 @@ class LogicalDeletedManager(models.Manager):
     
     def get_query_set(self):
         if self.model:
-            return super(LogicalDeletedManager, self).get_query_set().filter(
+            return LogicalDeleteQuerySet(self.model, using=self._db).filter(
                 date_removed__isnull=True
             )
     
