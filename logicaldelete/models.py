@@ -1,6 +1,5 @@
-import datetime
-
 from django.db import models
+from django.utils import timezone
 
 from logicaldelete import managers
 
@@ -10,23 +9,17 @@ class Model(models.Model):
     This base model provides date fields and functionality to enable logical
     delete functionality in derived models.
     """
-
-    date_created = models.DateTimeField(default=datetime.datetime.now)
-    date_modified = models.DateTimeField(default=datetime.datetime.now)
+    date_created = models.DateTimeField(default=timezone.now)
+    date_modified = models.DateTimeField(default=timezone.now)
     date_removed = models.DateTimeField(null=True, blank=True)
 
     objects = managers.LogicalDeletedManager()
 
     def active(self):
-        return self.date_removed == None
+        return self.date_removed is None
     active.boolean = True
 
     def delete(self):
-        '''
-        Soft delete all fk related objects that
-        inherit from logicaldelete class
-        '''
-
         # Fetch related models
         related_objs = [relation.get_accessor_name() for
                         relation in self._meta.get_all_related_objects()]
