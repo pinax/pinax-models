@@ -44,7 +44,7 @@ Installing pinax-models
 
 ::
 
-    pip install django-models
+    pip install pinax-models
 
 
 Using pinax-models
