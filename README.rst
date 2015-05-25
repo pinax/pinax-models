@@ -1,6 +1,13 @@
 Pinax Models
 ============
 
+On May 25, 2015, Patrick donated `django-logicaldelete` to Pinax and as part of
+that process, `pinax-models` was born and the code incorporated into that
+package. It remains just a Django app and can be quite independently of other
+Pinax apps.
+
+To learn more about Pinax, see http://pinaxproject.com/
+
 .. image:: https://img.shields.io/travis/pinax/pinax-models.svg
     :target: https://travis-ci.org/pinax/pinax-models
 
@@ -30,13 +37,6 @@ There are two exceptions to this rule, however, that are useful.
    (or deleted for that matter).
 #. It is a valid request when an item is fetched by its primary key value, that
    the object should return, even if it is marked as deleted.
-
-On May 25, 2015, Patrick donated `django-logicaldelete` to Pinax and as part of
-that process, `pinax-models` was born and the code incorporated into that
-package. It remains just a Django app and can be quite independently of other
-Pinax apps.
-
-To learn more about Pinax, see http://pinaxproject.com/
 
 
 Installing pinax-models
