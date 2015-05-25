@@ -1,27 +1,42 @@
-from setuptools import setup
+import codecs
 
-VERSION = __import__("logicaldelete").__version__
+from os import path
+from setuptools import find_packages, setup
 
- 
+
+def read(*parts):
+    filename = path.join(path.dirname(__file__), *parts)
+    with codecs.open(filename, encoding="utf-8") as fp:
+        return fp.read()
+
+
 setup(
-    name = "django-logicaldelete",
-    version = VERSION,
-    author = "Patrick Altman",
-    author_email = "paltman@gmail.com",
-    url = "http://github.com/paltman/django-logicaldelete",
-    description = "a base model that provides built in logical delete functionality",
-    long_description = open("README.rst").read(),
-    packages = [
-        "logicaldelete"
+    author="Pinax Developers",
+    author_email="developers@pinaxproject.com",
+    description="Provide Support for Logical Deletes on Models and in the Django Admin",
+    name="pinax-models",
+    long_description=read("README.rst"),
+    version="2.0",
+    url="http://pinax-models.rtfd.org/",
+    license="MIT",
+    packages=find_packages(),
+    package_data={
+        "models": []
+    },
+    test_suite="runtests.runtests",
+    tests_require=[
     ],
-    license="BSD",
-    classifiers = [
+    classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Web Environment",
+        "Framework :: Django",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: BSD License",
+        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Framework :: Django",
-    ]
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 3",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+    ],
+    zip_safe=False
 )

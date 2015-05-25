@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils import timezone
 
-from logicaldelete import managers
+from . import managers
 
 
-class Model(models.Model):
+class LogicalDeleteModel(models.Model):
     """
     This base model provides date fields and functionality to enable logical
     delete functionality in derived models.
@@ -21,8 +21,10 @@ class Model(models.Model):
 
     def delete(self):
         # Fetch related models
-        related_objs = [relation.get_accessor_name() for
-                        relation in self._meta.get_all_related_objects()]
+        related_objs = [
+            relation.get_accessor_name()
+            for relation in self._meta.get_all_related_objects()
+        ]
 
         for objs_model in related_objs:
             # Retrieve all related objects
@@ -30,7 +32,7 @@ class Model(models.Model):
 
             for obj in objs:
                 # Checking if inherits from logicaldelete
-                if not issubclass(obj.__class__, Model):
+                if not issubclass(obj.__class__, LogicalDeleteModel):
                     break
                 obj.delete()
 
