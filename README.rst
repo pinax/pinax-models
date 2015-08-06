@@ -1,5 +1,7 @@
 Pinax Models
 ============
+.. image:: http://slack.pinaxproject.com/badge.svg
+   :target: http://slack.pinaxproject.com/
 
 On May 25, 2015, Patrick donated `django-logicaldelete` to Pinax and as part of
 that process, `pinax-models` was born and the code incorporated into that
