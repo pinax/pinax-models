@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 from . import managers
+from .utils import get_related_objects
 
 
 class LogicalDeleteModel(models.Model):
@@ -21,20 +22,10 @@ class LogicalDeleteModel(models.Model):
 
     def delete(self):
         # Fetch related models
-        related_objs = [
-            relation.get_accessor_name()
-            for relation in self._meta.get_all_related_objects()
-        ]
+        to_delete = get_related_objects(self)
 
-        for objs_model in related_objs:
-            # Retrieve all related objects
-            objs = getattr(self, objs_model).all()
-
-            for obj in objs:
-                # Checking if inherits from logicaldelete
-                if not issubclass(obj.__class__, LogicalDeleteModel):
-                    break
-                obj.delete()
+        for obj in to_delete:
+            obj.delete()
 
         # Soft delete the object
         self.date_removed = timezone.now()
