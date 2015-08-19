@@ -3,13 +3,6 @@ Pinax Models
 .. image:: http://slack.pinaxproject.com/badge.svg
    :target: http://slack.pinaxproject.com/
 
-On May 25, 2015, Patrick donated `django-logicaldelete` to Pinax and as part of
-that process, `pinax-models` was born and the code incorporated into that
-package. It remains just a Django app and can be quite independently of other
-Pinax apps.
-
-To learn more about Pinax, see http://pinaxproject.com/
-
 .. image:: https://img.shields.io/travis/pinax/pinax-models.svg
     :target: https://travis-ci.org/pinax/pinax-models
 
@@ -24,6 +17,24 @@ To learn more about Pinax, see http://pinaxproject.com/
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target:  https://pypi.python.org/pypi/pinax-models/
+    
+pinax-models provides support for logical deletes on models and in the Django admin.
+
+Pinax is an open-source platform built on the Django Web Framework. It is an ecosystem of reusable Django apps, themes, and starter project templates. 
+This collection can be found at http://pinaxproject.com.
+
+This app was developed as part of the Pinax ecosystem but is just a Django app and can be used independently of other Pinax apps.
+
+In order to foster a kind, inclusive, and harassment-free community, the Pinax Project has a code of conduct, which can be found here  http://pinaxproject.com/pinax/code_of_conduct/.
+
+The Pinax documentation is available at http://pinaxproject.com/pinax/.
+
+For updates and news regarding the Pinax Project, please follow us on Twitter at @pinaxproject and check out our blog http://blog.pinaxproject.com.
+
+On May 25, 2015, Patrick donated `django-logicaldelete` to Pinax and as part of
+that process, `pinax-models` was born and the code incorporated into that
+package. It remains just a Django app and can be quite independently of other
+Pinax apps.
 
 This is a small and simple app that Patrick Altman wrote to get some reuse out
 of something he did in nearly every project and every model he created.  It's
