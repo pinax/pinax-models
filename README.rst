@@ -18,23 +18,20 @@ Pinax Models
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :target:  https://pypi.python.org/pypi/pinax-models/
     
-pinax-models provides support for logical deletes on models and in the Django admin.
+    
+Pinax
+--------
 
 Pinax is an open-source platform built on the Django Web Framework. It is an ecosystem of reusable Django apps, themes, and starter project templates. 
 This collection can be found at http://pinaxproject.com.
 
 This app was developed as part of the Pinax ecosystem but is just a Django app and can be used independently of other Pinax apps.
 
-In order to foster a kind, inclusive, and harassment-free community, the Pinax Project has a code of conduct, which can be found here  http://pinaxproject.com/pinax/code_of_conduct/.
 
-The Pinax documentation is available at http://pinaxproject.com/pinax/.
+pinax-models
+-------------
 
-For updates and news regarding the Pinax Project, please follow us on Twitter at @pinaxproject and check out our blog http://blog.pinaxproject.com.
-
-On May 25, 2015, Patrick donated `django-logicaldelete` to Pinax and as part of
-that process, `pinax-models` was born and the code incorporated into that
-package. It remains just a Django app and can be quite independently of other
-Pinax apps.
+``pinax-models`` provides support for logical deletes on models and in the Django admin.
 
 This is a small and simple app that Patrick Altman wrote to get some reuse out
 of something he did in nearly every project and every model he created.  It's
@@ -50,33 +47,42 @@ There are two exceptions to this rule, however, that are useful.
    (or deleted for that matter).
 #. It is a valid request when an item is fetched by its primary key value, that
    the object should return, even if it is marked as deleted.
+   
+   
+History
+--------
+
+On May 25, 2015, Patrick donated ``django-logicaldelete`` to Pinax and as part of
+that process, ``pinax-models`` was born and the code incorporated into that
+package. It remains just a Django app and can be quite independently of other
+Pinax apps.
 
 
-Installing pinax-models
+Installation
 -----------------------
 
 ::
 
     pip install pinax-models
+    
 
-
-Using pinax-models
+Usage
 ------------------
 
 Using the app is pretty simple:
 
 #. add `pinax.models` to your INSTALLED_APPS
-#. Inherit from `pinax.models.LogicalDeleteModel` for all models that you wish
+#. Inherit from ``pinax.models.LogicalDeleteModel`` for all models that you wish
    to share in this functionality.
 #. Create and/or Register admins for each of these models using
-   `pinax.models.LogicalDeleteModelAdmin`
+   ``pinax.models.LogicalDeleteModelAdmin``
 
 
 Additional
 ----------
 
 Logical deletes are handled by date stamping a `date_removed` column.  In
-addition, a `date_created` and `date_modified` columns will be populated as a
+addition, a ``date_created`` and ``date_modified`` columns will be populated as a
 convenience.
 
 
@@ -86,12 +92,43 @@ Backwards Incompatible Changes
 2.0
 ***
 
-* Renamed to `pinax-models` and base model renamed to `LogicalDeleteModel`
+* Renamed to ``pinax-models`` and base model renamed to ``LogicalDeleteModel``
 
 
 1.1
 ***
 
-* Changed `everything` to `all_with_deleted` on LogicalDeleteManager
-* LogicalDeleteManager moved from `logicaldelete.models` to `logicaldelete.managers`
-* Removed `deleted` and `everything` querysets from `logicaldelete.models.Model`
+* Changed ``everything`` to ``all_with_deleted`` on LogicalDeleteManager
+* LogicalDeleteManager moved from ``logicaldelete.models`` to ``logicaldelete.managers``
+* Removed ``deleted`` and ``everything`` querysets from ``logicaldelete.models.Model``
+
+
+Documentation
+--------------
+
+The Pinax documentation is available at http://pinaxproject.com/pinax/.
+
+
+Code of Conduct
+----------------
+
+In order to foster a kind, inclusive, and harassment-free community, the Pinax Project has a code of conduct, which can be found here  http://pinaxproject.com/pinax/code_of_conduct/.
+
+
+Pinax Project Blog and Twitter
+-------------------------------
+
+For updates and news regarding the Pinax Project, please follow us on Twitter at @pinaxproject and check out our blog http://blog.pinaxproject.com.
+
+
+
+
+
+
+
+
+
+
+
+
+
