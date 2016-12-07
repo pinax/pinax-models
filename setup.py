@@ -16,7 +16,7 @@ setup(
     description="Provide Support for Logical Deletes on Models and in the Django Admin",
     name="pinax-models",
     long_description=read("README.rst"),
-    version="2.0",
+    version="3.0",
     url="http://pinax-models.rtfd.org/",
     license="MIT",
     packages=find_packages(),

@@ -4,12 +4,7 @@ import itertools
 
 from django.db import DEFAULT_DB_ALIAS
 
-try:
-    # Django 1.7
-    from django.contrib.admin.utils import NestedObjects
-except ImportError:
-    # Django < 1.7
-    from django.contrib.admin.util import NestedObjects
+from django.contrib.admin.utils import NestedObjects
 
 
 def get_related_objects(obj, using=DEFAULT_DB_ALIAS):
@@ -25,4 +20,3 @@ def get_related_objects(obj, using=DEFAULT_DB_ALIAS):
         return ()
 
     return flatten(collector.nested())
-

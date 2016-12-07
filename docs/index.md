@@ -25,7 +25,7 @@ Add `pinax-models` to your `INSTALLED_APPS` setting:
 
 ## Logical Deletion
 
-`pinax.models.LogicalDeleteModel` aims to provide a consistent interface for
+`pinax.models.models.LogicalDeleteModel` aims to provide a consistent interface for
 managing logical deletion of models also reducing the need to implement
 functionality at the model level.
 
