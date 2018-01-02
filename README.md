@@ -91,10 +91,10 @@ functionality at the model level.
 
 Using the app is pretty simple:
 
-#. add `pinax.models` to your INSTALLED_APPS
-#. Inherit from ``pinax.models.LogicalDeleteModel`` for all models that you wish
+* add `pinax.models` to your INSTALLED_APPS
+* Inherit from ``pinax.models.LogicalDeleteModel`` for all models that you wish
    to share in this functionality.
-#. Create and/or Register admins for each of these models using
+* Create and/or Register admins for each of these models using
    ``pinax.models.LogicalDeleteModelAdmin``
 
 ### Additional
