@@ -34,7 +34,7 @@ Pinax Models
 
 \ 
 
-``pinax-models`` provide support for logical deletes on models and in the Django admin.
+``pinax-models`` provides support for logical deletes on models and in the Django admin.
  
 Supported Django and Python Versions
 ------------------------------------
