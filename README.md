@@ -48,10 +48,10 @@ behavior so that logically deleted items are not returned in querysets.
 
 There are two exceptions to this rule, however, that are useful.
 
-#. In the admin it is nice to see everything with an indicator of whether or not
+* In the admin it is nice to see everything with an indicator of whether or not
    it has been deleted, with the ability to filter down to just active records,
    (or deleted for that matter).
-#. It is a valid request when an item is fetched by its primary key value, that
+* It is a valid request when an item is fetched by its primary key value, that
    the object should return, even if it is marked as deleted.
    
 #### Supported Django and Python versions
@@ -113,6 +113,7 @@ convenience.
 * Move documentation into README, standardize layout
 * Convert CI and coverage to CircleCi and CodeCov
 * Add PyPi-compatible long description
+
 
 ## Backwards Incompatible Changes
 
