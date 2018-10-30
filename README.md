@@ -11,6 +11,7 @@
 [![](http://slack.pinaxproject.com/badge.svg)](http://slack.pinaxproject.com/)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+
 ## Table of Contents
 
 * [About Pinax](#about-pinax)
@@ -18,9 +19,8 @@
   * [Supported Django and Python versions](#supported-django-and-python-versions)
 * [Documentation](#documentation)
   * [Installation](#installation)
-  * [Logical Deletion](#logical-deletion)
   * [Usage](#usage)
-  * [Additional](#additional)
+  * [Logical Deletion](#logical-deletion)
 * [Change Log](#change-log)
 * [Backwards Incompatible Changes](#backwards-incompatible-changes)
 * [History](#history)
@@ -29,9 +29,11 @@
 * [Connect with Pinax](#connect-with-pinax)
 * [License](#license)
 
+
 ## About Pinax
 
 Pinax is an open-source platform built on the Django Web Framework. It is an ecosystem of reusable Django apps, themes, and starter project templates. This collection can be found at http://pinaxproject.com.
+
 
 ## pinax-models
 
@@ -61,21 +63,37 @@ Django \ Python | 2.7 | 3.4 | 3.5 | 3.6
 1.11 |  *  |  *  |  *  |  *  
 2.0  |     |  *  |  *  |  *
 
+
 ## Documentation
 
+The ``pinax-models`` documentation is currently under construction. If you would like to help us write documentation, please join our Pinax Project Slack team and let us know! The Pinax documentation is available at http://pinaxproject.com/pinax/.
+
 ### Installation
-   
-Install the development version:
 
-    pip install pinax-models
+To install pinax-models:
 
-Add `pinax-models` to your `INSTALLED_APPS` setting:
+```shell
+    $ pip install pinax-models
+```
 
-    INSTALLED_APPS = (
-        # ...
+Add `pinax.models` to your `INSTALLED_APPS` setting:
+
+```python
+    INSTALLED_APPS = [
+        # other apps
         "pinax.models",
-        # ...
-    )
+    ]
+```
+
+### Usage
+
+Using the app is pretty simple:
+
+#. add `pinax.models` to your INSTALLED_APPS
+#. Inherit from ``pinax.models.LogicalDeleteModel`` for all models that you wish
+   to share in this functionality.
+#. Create and/or Register admins for each of these models using
+   ``pinax.models.LogicalDeleteModelAdmin``
 
 ### Logical Deletion
 
@@ -86,18 +104,6 @@ functionality at the model level.
 * Logical Deletion instead of Physical Deletion
 * Admin that can reveal which records are "Deleted" and allow you to reverse it.
 * Provides some short cuts in the default manager
-
-### Usage
-
-Using the app is pretty simple:
-
-* add `pinax.models` to your INSTALLED_APPS
-* Inherit from ``pinax.models.LogicalDeleteModel`` for all models that you wish
-   to share in this functionality.
-* Create and/or Register admins for each of these models using
-   ``pinax.models.LogicalDeleteModelAdmin``
-
-### Additional
 
 Logical deletes are handled by date stamping a `date_removed` column.  In
 addition, a ``date_created`` and ``date_modified`` columns will be populated as a
