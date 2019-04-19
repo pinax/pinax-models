@@ -15,7 +15,7 @@ setup(
     author_email="developers@pinaxproject.com",
     description="Provide Support for Logical Deletes on Models and in the Django Admin",
     name="pinax-models",
-    long_description=read("README.rst"),
+    long_description=read("README.md"),
     version="3.0",
     url="http://pinax-models.rtfd.org/",
     license="MIT",
